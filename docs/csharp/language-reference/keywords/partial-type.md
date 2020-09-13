@@ -1,5 +1,6 @@
 ---
-title: "partial type (C# Reference)"
+description: "partial type - C# Reference"
+title: "partial type - C# Reference"
 ms.date: 07/20/2015
 f1_keywords: 
   - "partialtype"
@@ -32,5 +33,5 @@ Splitting a class, struct or interface type over several files can be useful whe
 
 - [C# Reference](../index.md)
 - [C# Programming Guide](../../programming-guide/index.md)
-- [Modifiers](modifiers.md)
-- [Introduction to Generics](../../programming-guide/generics/introduction-to-generics.md)
+- [Modifiers](index.md)
+- [Introduction to Generics](../../programming-guide/generics/index.md)

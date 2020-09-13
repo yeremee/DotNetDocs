@@ -1,13 +1,11 @@
 ---
-title: dotnet-add reference command - .NET Core CLI
+title: dotnet add reference command
 description: The dotnet add reference command provides a convenient option to add project to project references.
-author: mairaw
-ms.author: mairaw
-ms.date: 05/25/2018
+ms.date: 02/14/2020
 ---
-# dotnet-add reference
+# dotnet add reference
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**This article applies to:** ✔️ .NET Core 2.x SDK and later versions
 
 ## Name
 
@@ -15,11 +13,16 @@ ms.date: 05/25/2018
 
 ## Synopsis
 
-`dotnet add [<PROJECT>] reference [-f|--framework] <PROJECT_REFERENCES> [-h|--help]`
+```dotnetcli
+dotnet add [<PROJECT>] reference [-f|--framework <FRAMEWORK>]
+     [--interactive] <PROJECT_REFERENCES>
+
+dotnet add reference -h|--help
+```
 
 ## Description
 
-The `dotnet add reference` command provides a convenient option to add project references to a project. After running the command, the [`<ProjectReference>`](/visualstudio/msbuild/common-msbuild-project-items) elements are added to the project file.
+The `dotnet add reference` command provides a convenient option to add project references to a project. After running the command, the `<ProjectReference>` elements are added to the project file.
 
 ```xml
 <ItemGroup>
@@ -31,34 +34,44 @@ The `dotnet add reference` command provides a convenient option to add project r
 
 ## Arguments
 
-`PROJECT`
+- **`PROJECT`**
 
-Specifies the project file. If not specified, the command searches the current directory for one.
+  Specifies the project file. If not specified, the command searches the current directory for one.
 
-`PROJECT_REFERENCES`
+- **`PROJECT_REFERENCES`**
 
-Project-to-project (P2P) references to add. Specify one or more projects. [Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are supported on Unix/Linux-based systems.
+  Project-to-project (P2P) references to add. Specify one or more projects. [Glob patterns](https://en.wikipedia.org/wiki/Glob_(programming)) are supported on Unix/Linux-based systems.
 
 ## Options
 
-`-h|--help`
+- **`-f|--framework <FRAMEWORK>`**
 
-Prints out a short help for the command.
+  Adds project references only when targeting a specific [framework](../../standard/frameworks.md) using the TFM format.
 
-`-f|--framework <FRAMEWORK>`
+- **`-h|--help`**
 
-Adds project references only when targeting a specific [framework](../../standard/frameworks.md).
+  Prints out a short help for the command.
+
+- **`--interactive`**
+
+  Allows the command to stop and wait for user input or action (typically used to complete authentication). Available since .NET Core 3.0 SDK.
 
 ## Examples
 
-Add a project reference:
+- Add a project reference:
 
-`dotnet add app/app.csproj reference lib/lib.csproj`
+  ```dotnetcli
+  dotnet add app/app.csproj reference lib/lib.csproj
+  ```
 
-Add multiple project references to the project in the current directory:
+- Add multiple project references to the project in the current directory:
 
-`dotnet add reference lib1/lib1.csproj lib2/lib2.csproj`
+  ```dotnetcli
+  dotnet add reference lib1/lib1.csproj lib2/lib2.csproj
+  ```
 
-Add multiple project references using a globbing pattern on Linux/Unix:
+- Add multiple project references using a globbing pattern on Linux/Unix:
 
-`dotnet add app/app.csproj reference **/*.csproj`
+  ```dotnetcli
+  dotnet add app/app.csproj reference **/*.csproj
+  ```

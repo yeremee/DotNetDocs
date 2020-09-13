@@ -1,5 +1,5 @@
 ---
-title: let Bindings in Classes (F#)
+title: let Bindings in Classes
 description: Learn how to define private fields and private functions for F# classes by using 'let' bindings in the class definition.
 ms.date: 05/16/2016
 ---
@@ -29,11 +29,11 @@ Attributes and accessibility modifiers are not permitted on `let` bindings in cl
 
 The following code examples illustrate several types of `let` bindings in classes.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3001.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3001.fs)]
 
 The output is as follows.
 
-```
+```console
 10 52 1 204
 ```
 

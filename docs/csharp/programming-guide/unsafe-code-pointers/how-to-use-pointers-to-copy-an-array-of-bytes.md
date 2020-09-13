@@ -1,12 +1,13 @@
 ---
-title: "How to: Use Pointers to Copy an Array of Bytes  (C# Programming Guide)"
+title: "How to use pointers to copy an array of bytes - C# Programming Guide"
+description: Learn how to use pointers to copy an array of bytes. See a code example and additional available resources.
 ms.date: 04/20/2018
 helpviewer_keywords: 
   - "byte arrays [C#]"
   - "arrays [C#], byte"
   - "pointers [C#], to copy bytes"
 ---
-# How to: Use Pointers to Copy an Array of Bytes  (C# Programming Guide)
+# How to use pointers to copy an array of bytes (C# Programming Guide)
 
 The following example uses pointers to copy bytes from one array to another.
 
@@ -16,11 +17,11 @@ This example accesses the elements of both arrays using indices rather than a se
 
 ## Example
 
-[!code-csharp[Struct with embedded inline array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#8)]
+[!code-csharp[Struct with embedded inline array](snippets/FixedKeywordExamples.cs#8)]
 
-## See Also
+## See also
 
-- [C# Programming Guide](../index.md)  
-- [Unsafe Code and Pointers](index.md)  
-- [-unsafe (C# Compiler Options)](../../language-reference/compiler-options/unsafe-compiler-option.md)  
-- [Garbage Collection](../../../standard/garbage-collection/index.md)  
+- [C# Programming Guide](../index.md)
+- [Unsafe Code and Pointers](index.md)
+- [-unsafe (C# Compiler Options)](../../language-reference/compiler-options/unsafe-compiler-option.md)
+- [Garbage Collection](../../../standard/garbage-collection/index.md)

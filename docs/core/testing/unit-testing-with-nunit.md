@@ -6,24 +6,26 @@ ms.date: 08/31/2018
 ---
 # Unit testing C# with NUnit and .NET Core
 
-This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts. If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-nunit/) before you begin. For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts. If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-nunit/) before you begin. For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#view-and-download-samples).
+
+[!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
 ## Prerequisites
 
-- [.NET Core SDK 2.1 (v. 2.1.400)](https://www.microsoft.com/net/download) or later versions.
+- [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download) or later versions.
 - A text editor or code editor of your choice.
 
 ## Creating the source project
 
 Open a shell window. Create a directory called *unit-testing-using-nunit* to hold the solution. Inside this new directory, run the following command to create a new solution file for the class library and the test project:
 
-```console
+```dotnetcli
 dotnet new sln
 ```
- 
+
 Next, create a *PrimeService* directory. The following outline shows the directory and file structure so far:
 
-```
+```console
 /unit-testing-using-nunit
     unit-testing-using-nunit.sln
     /PrimeService
@@ -31,11 +33,11 @@ Next, create a *PrimeService* directory. The following outline shows the directo
 
 Make *PrimeService* the current directory and run the following command to create the source project:
 
-```console
+```dotnetcli
 dotnet new classlib
 ```
 
-Rename *Class1.cs* to *PrimeService.cs*. To use test-driven development (TDD), you create a failing implementation of the `PrimeService` class:
+Rename *Class1.cs* to *PrimeService.cs*. You create a failing implementation of the `PrimeService` class:
 
 ```csharp
 using System;
@@ -46,7 +48,7 @@ namespace Prime.Services
     {
         public bool IsPrime(int candidate)
         {
-            throw new NotImplementedException("Please create a test first");
+            throw new NotImplementedException("Please create a test first.");
         }
     }
 }
@@ -54,7 +56,7 @@ namespace Prime.Services
 
 Change the directory back to the *unit-testing-using-nunit* directory. Run the following command to add the class library project to the solution:
 
-```console
+```dotnetcli
 dotnet sln add PrimeService/PrimeService.csproj
 ```
 
@@ -62,7 +64,7 @@ dotnet sln add PrimeService/PrimeService.csproj
 
 Next, create the *PrimeService.Tests* directory. The following outline shows the directory structure:
 
-```
+```console
 /unit-testing-using-nunit
     unit-testing-using-nunit.sln
     /PrimeService
@@ -73,17 +75,17 @@ Next, create the *PrimeService.Tests* directory. The following outline shows the
 
 Make the *PrimeService.Tests* directory the current directory and create a new project using the following command:
 
-```console
+```dotnetcli
 dotnet new nunit
 ```
 
 The [dotnet new](../tools/dotnet-new.md) command creates a test project that uses NUnit as the test library. The generated template configures the test runner in the *PrimeService.Tests.csproj* file:
 
-[!code-xml[Packages](~/samples/core/getting-started/unit-testing-using-nunit/PrimeService.Tests/PrimeService.Tests.csproj#Packages)]
+[!code-xml[Packages](~/samples/snippets/core/testing/unit-testing-using-nunit/csharp/PrimeService.Tests/PrimeService.Tests.csproj#Packages)]
 
 The test project requires other packages to create and run unit tests. `dotnet new` in the previous step added the Microsoft test SDK, the NUnit test framework, and the NUnit test adapter. Now, add the `PrimeService` class library as another dependency to the project. Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:
 
-```console
+```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.csproj
 ```
 
@@ -91,7 +93,7 @@ You can see the entire file in the [samples repository](https://github.com/dotne
 
 The following outline shows the final solution layout:
 
-```
+```console
 /unit-testing-using-nunit
     unit-testing-using-nunit.sln
     /PrimeService
@@ -102,42 +104,17 @@ The following outline shows the final solution layout:
         PrimeService.Tests.csproj
 ```
 
-Execute the following command in the *unit-testing-using-dotnet-test* directory:
+Execute the following command in the *unit-testing-using-nunit* directory:
 
-```console
-dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj
+```dotnetcli
+dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 ```
 
 ## Creating the first test
 
-The TDD approach calls for writing one failing test, making it pass, then repeating the process. In the *PrimeService.Tests* directory, rename the *UnitTest1.cs* file to *PrimeService_IsPrimeShould.cs* and replace its entire contents with the following code:
+You write one failing test, make it pass, then repeat the process. In the *PrimeService.Tests* directory, rename the *UnitTest1.cs* file to *PrimeService_IsPrimeShould.cs* and replace its entire contents with the following code:
 
-```csharp
-using NUnit.Framework;
-using Prime.Services;
-
-namespace Prime.UnitTests.Services
-{
-    [TestFixture]
-    public class PrimeService_IsPrimeShould
-    {
-        private readonly PrimeService _primeService;
-
-        public PrimeService_IsPrimeShould()
-        {
-            _primeService = new PrimeService();
-        }
-
-        [Test]
-        public void ReturnFalseGivenValueOf1()
-        {
-            var result = _primeService.IsPrime(1);
-
-            Assert.IsFalse(result, "1 should not be prime");
-        }
-    }
-}
-```
+[!code-csharp[Sample_FirstTest](~/samples/snippets/core/testing/unit-testing-using-nunit/csharp/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_FirstTest)]
 
 The `[TestFixture]` attribute denotes a class that contains unit tests. The `[Test]` attribute indicates a method is a test method.
 
@@ -152,7 +129,7 @@ public bool IsPrime(int candidate)
     {
         return false;
     }
-    throw new NotImplementedException("Please create a test first");
+    throw new NotImplementedException("Please create a test first.");
 }
 ```
 
@@ -164,7 +141,7 @@ Now that you've made one test pass, it's time to write more. There are a few oth
 
 Instead of creating new tests, apply this attribute to create a single data driven test. The data driven test is a method that tests several values less than two, which is the lowest prime number:
 
-[!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-nunit/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
+[!code-csharp[Sample_TestCode](~/samples/snippets/core/testing/unit-testing-using-nunit/csharp/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
 Run `dotnet test`, and two of these tests fail. To make all of the tests pass, change the `if` clause at the beginning of the `Main` method in the *PrimeService.cs* file:
 

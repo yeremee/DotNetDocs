@@ -1,5 +1,5 @@
 ---
-title: "Resource Management: The use Keyword (F#)"
+title: "Resource Management: The use Keyword"
 description: Learn about the F# keyword 'use' and the 'using' function, which can control the initialization and release of resources.
 ms.date: 05/16/2016
 ---
@@ -25,10 +25,10 @@ It provides the same functionality as a `let` binding but adds a call to `Dispos
 
 The following example shows how to close a file automatically by using the `use` keyword.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6301.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6301.fs)]
 
->[!NOTE]
-You can use `use` in computation expressions, in which case a customized version of the `use` expression is used. For more information, see [Sequences](sequences.md), [Asynchronous Workflows](asynchronous-workflows.md), and [Computation Expressions](computation-expressions.md).
+> [!NOTE]
+> You can use `use` in computation expressions, in which case a customized version of the `use` expression is used. For more information, see [Sequences](sequences.md), [Asynchronous Workflows](asynchronous-workflows.md), and [Computation Expressions](computation-expressions.md).
 
 ## using Function
 
@@ -40,15 +40,15 @@ In a `using` expression, *expression1* creates the object that must be disposed.
 
 The following example demonstrates the `using` expression with a lambda expression.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6302.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6302.fs)]
 
 The next example shows the `using` expression with a function.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6303.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6303.fs)]
 
 Note that the function could be a function that has some arguments applied already. The following code example demonstrates this. It creates a file that contains the string `XYZ`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6304.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6304.fs)]
 
 The `using` function and the `use` binding are nearly equivalent ways to accomplish the same thing. The `using` keyword provides more control over when `Dispose` is called. When you use `using`, `Dispose` is called at the end of the function or lambda expression; when you use the `use` keyword, `Dispose` is called at the end of the containing code block. In general, you should prefer to use `use` instead of the `using` function.
 

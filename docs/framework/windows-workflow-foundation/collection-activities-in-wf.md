@@ -7,7 +7,7 @@ ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
 Collection activities are used to work with collection objects in a workflow. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] has system-provided activities for adding and removing items from a collection, testing for the existence of an item in a collection, and clearing a collection. `ExistsInCollection` and `RemoveFromCollection` have an <xref:System.Activities.OutArgument%601> of type <xref:System.Boolean>, which indicates the result.  
   
 > [!IMPORTANT]
->  If a collection activity is executed before setting the underlying collection object, an <xref:System.InvalidOperationException> is thrown and the activity faults.  
+> If a collection activity is executed before setting the underlying collection object, an <xref:System.InvalidOperationException> is thrown and the activity faults.  
   
 ## Collection activities  
   
@@ -19,7 +19,7 @@ Collection activities are used to work with collection objects in a workflow. [!
 |<xref:System.Activities.Statements.RemoveFromCollection%601>|Removes an item from a specified collection and returns `true` if the item was successfully removed.|  
   
 ## Using collection activities  
- The following code example demonstrates how to interact with a collection declared as a workflow variable. The collection used is a <!--zz <xref:System.Collections.Generic.List%E2%80%991>--> `System.Collections.Generic.List`  of <xref:System.String> objects named `fruitList`.  
+ The following code example demonstrates how to interact with a collection declared as a workflow variable. The collection used is a <xref:System.Collections.Generic.List%601> of <xref:System.String> objects named `fruitList`.  
   
 ```csharp  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -37,7 +37,7 @@ Activity wf = new Sequence
 {  
     Variables = { fruitList, result },  
   
-    Activities =   
+    Activities =
     {  
         new If  
         {  
@@ -221,7 +221,7 @@ Activity wf = new Sequence
   
  The above code samples can also be created using <xref:Microsoft.CSharp.Activities.CSharpValue%601> instead of <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>  
   
-```  
+```csharp
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
 {  
     Default = new CSharpValue<ICollection<string>>("new List<String> From {\"Apple\", \"Orange\"};"),  
@@ -237,7 +237,7 @@ Activity wf = new Sequence
 {  
     Variables = { fruitList, result },  
   
-    Activities =   
+    Activities =
     {  
         new If  
         {  
@@ -419,5 +419,6 @@ Activity wf = new Sequence
 </Sequence>  
 ```  
   
-## See Also  
- [Authoring Workflows, Activities, and Expressions Using Imperative Code](../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## See also
+
+- [Authoring Workflows, Activities, and Expressions Using Imperative Code](authoring-workflows-activities-and-expressions-using-imperative-code.md)

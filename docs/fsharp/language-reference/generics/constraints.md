@@ -1,5 +1,5 @@
 ---
-title: Constraints (F#)
+title: Constraints
 description: Learn about F# constraints that apply to generic type parameters to specify the requirements for a type argument in a generic type or function.
 ms.date: 05/16/2016
 ---
@@ -22,7 +22,7 @@ There are several different constraints you can apply to limit the types that ca
 |Type Constraint|*type-parameter* :&gt; *type*|The provided type must be equal to or derived from the type specified, or, if the type is an interface, the provided type must implement the interface.|
 |Null Constraint|*type-parameter* : null|The provided type must support the null literal. This includes all .NET object types but not F# list, tuple, function, class, record, or union types.|
 |Explicit Member Constraint|[(]*type-parameter* [or ... or *type-parameter*)] : (*member-signature*)|At least one of the type arguments provided must have a member that has the specified signature; not intended for common use. Members must be either explicitly defined on the type or part of an implicit type extension to be valid targets for an Explicit Member Constraint.|
-|Constructor Constraint|*type-parameter* : ( new : unit -&gt; 'a )|The provided type must have a default constructor.|
+|Constructor Constraint|*type-parameter* : ( new : unit -&gt; 'a )|The provided type must have a parameterless constructor.|
 |Value Type Constraint|: struct|The provided type must be a .NET value type.|
 |Reference Type Constraint|: not struct|The provided type must be a .NET reference type.|
 |Enumeration Type Constraint|: enum&lt;*underlying-type*&gt;|The provided type must be an enumerated type that has the specified underlying type; not intended for common use.|
@@ -30,6 +30,7 @@ There are several different constraints you can apply to limit the types that ca
 |Comparison Constraint|: comparison|The provided type must support comparison.|
 |Equality Constraint|: equality|The provided type must support equality.|
 |Unmanaged Constraint|: unmanaged|The provided type must be an unmanaged type. Unmanaged types are either certain primitive types (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint64`, or `decimal`), enumeration types, `nativeptr<_>`, or a non-generic structure whose fields are all unmanaged types.|
+
 You have to add a constraint when your code has to use a feature that is available on the constraint type but not on types in general. For example, if you use the type constraint to specify a class type, you can use any one of the methods of that class in the generic function or type.
 
 Specifying constraints is sometimes required when writing type parameters explicitly, because without a constraint, the compiler has no way of verifying that the features that you are using will be available on any type that might be supplied at run time for the type parameter.
@@ -38,7 +39,7 @@ The most common constraints you use in F# code are type constraints that specify
 
 During the type inference process, some constraints are inferred automatically by the compiler. For example, if you use the `+` operator in a function, the compiler infers an explicit member constraint on variable types that are used in the expression.
 
-The following code illustrates some constraint declarations.
+The following code illustrates some constraint declarations:
 
 ```fsharp
 // Base Type Constraint
@@ -46,15 +47,11 @@ type Class1<'T when 'T :> System.Exception> =
 class end
 
 // Interface Type Constraint
-type Class2<'T when 'T :> System.IComparable> = 
+type Class2<'T when 'T :> System.IComparable> =
 class end
 
 // Null constraint
 type Class3<'T when 'T : null> =
-class end
-
-// Member constraint with static member
-type Class4<'T when 'T : (static member staticMethod1 : unit -> 'T) > =
 class end
 
 // Member constraint with instance member

@@ -1,5 +1,6 @@
 ---
-title: "protected keyword (C# Reference)"
+description: "protected keyword - C# Reference"
+title: "protected keyword - C# Reference"
 ms.date: 07/20/2015
 f1_keywords:
   - "protected"
@@ -40,19 +41,19 @@ If you change the access levels of `x` and `y` to [private](private.md), the com
 
 `'Point.x' is inaccessible due to its protection level.`
 
-## C# language specification
+## C# language specification  
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+For more information, see [Declared accessibility](~/_csharplang/spec/basic-concepts.md#declared-accessibility) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction). The language specification is the definitive source for C# syntax and usage.
 
 ## See also
 
-- [C# Reference](../../../csharp/language-reference/index.md)
-- [C# Programming Guide](../../../csharp/programming-guide/index.md)
+- [C# Reference](../index.md)
+- [C# Programming Guide](../../programming-guide/index.md)
 - [C# Keywords](index.md)
 - [Access Modifiers](access-modifiers.md)
 - [Accessibility Levels](accessibility-levels.md)
-- [Modifiers](modifiers.md)
+- [Modifiers](index.md)
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Security concerns for internal virtual keywords](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Security concerns for internal virtual keywords](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

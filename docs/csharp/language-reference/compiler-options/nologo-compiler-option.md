@@ -1,4 +1,5 @@
 ---
+description: "-nologo (C# Compiler Options)"
 title: "-nologo (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -24,7 +25,7 @@ The **-nologo** option suppresses display of the sign-on banner when the compile
   
  This compiler option is unavailable in Visual Studio and cannot be changed programmatically.  
   
-## See Also  
+## See also
 
-- [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)  
+- [C# Compiler Options](./index.md)
 - [Managing Project and Solution Properties](/visualstudio/ide/managing-project-and-solution-properties)

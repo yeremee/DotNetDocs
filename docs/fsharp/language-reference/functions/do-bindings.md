@@ -1,5 +1,5 @@
 ---
-title: do Bindings (F#)
+title: do Bindings
 description: Learn how an F# 'do' binding is used to execute code without defining a function or value.
 ms.date: 05/16/2016
 ---
@@ -20,7 +20,7 @@ Use a `do` binding when you want to execute code independently of a function or 
 
 Attributes can be applied to a top-level `do` binding. For example, if your program uses COM interop, you might want to apply the `STAThread` attribute to your program. You can do this by using an attribute on a `do` binding, as shown in the following code.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet201.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet201.fs)]
 
 ## See also
 

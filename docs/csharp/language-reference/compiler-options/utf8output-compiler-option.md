@@ -1,4 +1,5 @@
 ---
+description: "-utf8output (C# Compiler Options)"
 title: "-utf8output (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -23,6 +24,6 @@ The **-utf8output** option displays compiler output using UTF-8 encoding.
   
  This compiler option is unavailable in Visual Studio and cannot be changed programmatically.  
   
-## See Also  
+## See also
 
-- [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)
+- [C# Compiler Options](./index.md)

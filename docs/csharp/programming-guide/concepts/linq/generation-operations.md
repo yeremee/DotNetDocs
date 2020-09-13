@@ -1,5 +1,6 @@
 ---
 title: "Generation Operations (C#)"
+description: Generation creates a new sequence of values. Learn about the standard query operator methods in LINQ in C# that perform generation.
 ms.date: 07/20/2015
 ms.assetid: 1c421b3a-5954-448c-bcac-a27798d1858f
 ---
@@ -17,7 +18,7 @@ Generation refers to creating a new sequence of values.
 |Range|Generates a collection that contains a sequence of numbers.|Not applicable.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
 |Repeat|Generates a collection that contains one repeated value.|Not applicable.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
-## See Also
+## See also
 
-- <xref:System.Linq>  
-- [Standard Query Operators Overview (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- <xref:System.Linq>
+- [Standard Query Operators Overview (C#)](./standard-query-operators-overview.md)

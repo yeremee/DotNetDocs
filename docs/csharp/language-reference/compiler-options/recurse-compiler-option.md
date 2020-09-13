@@ -1,4 +1,5 @@
 ---
+description: "-recurse (C# Compiler Options)"
 title: "-recurse (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -45,7 +46,7 @@ csc *.cs
 csc -target:library -out:dir2.dll -recurse:dir1\dir2\*.cs  
 ```  
   
-## See Also  
+## See also
 
-- [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)  
+- [C# Compiler Options](./index.md)
 - [Managing Project and Solution Properties](/visualstudio/ide/managing-project-and-solution-properties)

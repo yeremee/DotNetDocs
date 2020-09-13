@@ -1,5 +1,5 @@
 ---
-title: "&lt;remove&gt; Element for connectionManagement (Network Settings)"
+title: "<remove> Element for connectionManagement (Network Settings)"
 ms.date: "03/30/2017"
 f1_keywords: 
   - "http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/remove"
@@ -10,23 +10,20 @@ helpviewer_keywords:
   - "<connectionManagement>, remove element"
   - "remove element, connectionManagement"
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
 ---
-# &lt;remove&gt; Element for connectionManagement (Network Settings)
+# \<remove> Element for connectionManagement (Network Settings)
 Removes an IP address or DNS name from the connection management list.  
-  
- \<configuration>  
-\<system.net>  
-\<connectionManagement>  
-\<remove>  
-  
+
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<connectionManagement>**](connectionmanagement-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
+
 ## Syntax  
   
 ```xml  
-<remove   
-  address="server name or IP address"   
+<remove
+  address="server name or IP address"
 />  
 ```  
   
@@ -46,7 +43,7 @@ Removes an IP address or DNS name from the connection management list.
   
 |**Element**|**Description**|  
 |-----------------|---------------------|  
-|[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Specifies the maximum number of connections to a network host.|  
+|[connectionManagement](connectionmanagement-element-network-settings.md)|Specifies the maximum number of connections to a network host.|  
   
 ## Remarks  
  The `remove` element removes the connection management list entry for the specified server.  
@@ -57,7 +54,7 @@ Removes an IP address or DNS name from the connection management list.
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
   
 ## Example  
- The following example removes any connection management list entries for the server www.adventure-works.com and then configures an application to use four connections to the server www.contoso.com and two connections to all other servers.  
+ The following example removes any connection management list entries for the server `www.adventure-works.com` and then configures an application to use four connections to the server `www.contoso.com` and two connections to all other servers.  
   
 ```xml  
 <configuration>  
@@ -71,7 +68,8 @@ Removes an IP address or DNS name from the connection management list.
 </configuration>  
 ```  
   
-## See Also  
- <xref:System.Net.ServicePoint>  
- <xref:System.Net.ServicePointManager>  
- [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## See also
+
+- <xref:System.Net.ServicePoint>
+- <xref:System.Net.ServicePointManager>
+- [Network Settings Schema](index.md)

@@ -1,4 +1,5 @@
 ---
+description: "-publicsign (C# Compiler Options)"
 title: "-publicsign (C# Compiler Options)"
 ms.date: 05/15/2018
 f1_keywords: 
@@ -30,15 +31,18 @@ The **-publicsign** and **-delaysign** options are mutually exclusive.
 
 Sometimes called "fake sign" or "OSS sign", public signing includes the public key in an output assembly and sets the "signed" flag, but doesn't actually sign the assembly with a private key. This is useful for open source projects where people want to build assemblies which are compatible with the released "fully signed" assemblies, but don't have access to the private key used to sign the assemblies. Since almost no consumers actually need to check if the assembly is fully signed, these publicly built assemblies are useable in almost every scenario where the fully signed one would be used.
 
-### To set this compiler option in the Visual Studio development environment
+### To set this compiler option in a csproj file
 
-1. Open the **Properties** page for the project.
-1. Modify the **Delay sign only** property.
+Open the .csproj file for a project, and add the following element:
 
-## See Also
+```xml
+<PublicSign>true</PublicSign>
+```
 
-- [C# Compiler -delaysign option](delaysign-compiler-option.md)  
-- [C# Compiler -keyfile option](keyfile-compiler-option.md)  
-- [C# Compiler -keycontainer option](keycontainer-compiler-option.md)  
-- [C# Compiler Options](index.md)  
+## See also
+
+- [C# Compiler -delaysign option](delaysign-compiler-option.md)
+- [C# Compiler -keyfile option](keyfile-compiler-option.md)
+- [C# Compiler -keycontainer option](keycontainer-compiler-option.md)
+- [C# Compiler Options](index.md)
 - [Managing Project and Solution Properties](/visualstudio/ide/managing-project-and-solution-properties)

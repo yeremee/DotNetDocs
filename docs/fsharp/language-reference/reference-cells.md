@@ -1,5 +1,5 @@
 ---
-title: Reference Cells (F#)
+title: Reference Cells
 description: Learn how F# reference cells are storage locations that enable you to create mutable values with reference semantics.
 ms.date: 05/16/2016
 ---
@@ -23,7 +23,7 @@ You can dereference a reference cell by using the `!` (bang) operator.
 
 The following code example illustrates the declaration and use of reference cells.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2201.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2201.fs)]
 
 The output is `50`.
 
@@ -51,15 +51,16 @@ The following table shows the features that are available on the reference cell.
 |`ref` (operator)|Encapsulates a value into a new reference cell.|`'a -> 'a ref`|`let ref x = { contents = x }`|
 |`Value` (property)|Gets or sets the underlying value.|`unit -> 'a`|`member x.Value = x.contents`|
 |`contents` (record field)|Gets or sets the underlying value.|`'a`|`let ref x = { contents = x }`|
+
 There are several ways to access the underlying value. The value returned by the dereference operator (`!`) is not an assignable value. Therefore, if you are modifying the underlying value, you must use the assignment operator (`:=`) instead.
 
 Both the `Value` property and the `contents` field are assignable values. Therefore, you can use these to either access or change the underlying value, as shown in the following code.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2203.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2203.fs)]
 
 The output is as follows.
 
-```
+```console
 10
 10
 11
@@ -70,11 +71,11 @@ The field `contents` is provided for compatibility with other versions of ML and
 
 C# programmers should know that `ref` in C# is not the same thing as `ref` in F#. The equivalent constructs in F# are [byrefs](byrefs.md), which are a different concept from reference cells.
 
-Values marked as `mutable`may be automatically promoted to `'a ref` if captured by a closure; see [Values](values/index.md).
+Values marked as `mutable`may be automatically promoted to `'a ref` if captured by a closure; see [Values](./values/index.md).
 
 ## See also
 
 - [F# Language Reference](index.md)
 - [Parameters and Arguments](parameters-and-arguments.md)
-- [Symbol and Operator Reference](symbol-and-operator-reference/index.md)
-- [Values](values/index.md)
+- [Symbol and Operator Reference](./symbol-and-operator-reference/index.md)
+- [Values](./values/index.md)

@@ -1,21 +1,19 @@
 ---
-title: F# Interactive (fsi.exe) Reference
-description: Learn how F# Interactive (fsi.exe) is used to run F# code interactively at the console or to execute F# scripts.
-ms.date: 05/16/2016
+title: F# Interactive (dotnet) Reference
+description: Learn how F# Interactive (dotnet fsi) is used to run F# code interactively at the console or to execute F# scripts.
+ms.date: 08/20/2020
+f1_keywords:
+ - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
 ---
-# Interactive Programming with F# #
+# Interactive programming with F\#
 
-> [!NOTE]
-This article currently describes the experience for Windows only.  It will be rewritten.
+F# Interactive (dotnet fsi) is used to run F# code interactively at the console, or to execute F# scripts. In other words, F# interactive executes a REPL (Read, Evaluate, Print Loop) for the F# language.
 
-> [!NOTE]
-The API reference link will take you to MSDN.  The docs.microsoft.com API reference is not complete.
+To run F# Interactive from the console, run `dotnet fsi`. You will find `dotnet fsi` in any .NET SDK.
 
-F# Interactive (fsi.exe) is used to run F# code interactively at the console, or to execute F# scripts. In other words, F# interactive executes a REPL (Read, Evaluate, Print Loop) for the F# language.
+For information about command line options available, see [F# Interactive Options](../../language-reference/fsharp-interactive-options.md).
 
-To run F# Interactive from the console, run fsi.exe.  You will find fsi.exe in "c:\Program Files (x86)\Microsoft SDKs\F#\<version>\Framework\<version>\". For information about command line options available, see [F# Interactive Options](../../language-reference/fsharp-interactive-options.md).
-
-To run F# Interactive through Visual Studio, you can click the appropriate toolbar button labeled **F# Interactive**, or use the keys **Ctrl+Alt+F**. Doing this will open the interactive window, a tool window running an F# Interactive session. You can also select some code that you want to run in the interactive window and hit the key combination **ALT+ENTER**. F# Interactive starts in a tool window labeled **F# Interactive**. When you use this key combination, make sure that the editor window has the focus.
+To run F# Interactive through Visual Studio, you can click the appropriate toolbar button labeled **F# Interactive**, or use the keys **Ctrl+Alt+F**. Doing this will open the interactive window, a tool window running an F# Interactive session. You can also select some code that you want to run in the interactive window and hit the key combination **Alt+Enter**. F# Interactive starts in a tool window labeled **F# Interactive**. When you use this key combination, make sure that the editor window has the focus.
 
 Whether you are using the console or Visual Studio, a command prompt appears and the interpreter awaits your input. You can enter code just as you would in a code file. To compile and execute the code, enter two semicolons (**;;**) to terminate a line or several lines of input.
 
@@ -29,12 +27,12 @@ If you have a project open that references some libraries, you can reference the
 
 You can control the F# Interactive command line arguments (options) by adjusting the settings. On the **Tools** menu, select **Options...**, and then expand **F# Tools**. The two settings that you can change are the F# Interactive options and the **64-bit F# Interactive** setting, which is relevant only if you are running F# Interactive on a 64-bit machine. This setting determines whether you want to run the dedicated 64-bit version of fsi.exe or fsianycpu.exe, which uses the machine architecture to determine whether to run as a 32-bit or 64-bit process.
 
+## Scripting with F\#
 
-## Scripting with F# #
-Scripts use the file extension **.fsx** or **.fsscript**. Instead of compiling source code and then later running the compiled assembly, you can just run **fsi.exe** and specify the filename of the script of F# source code, and F# interactive reads the code and executes it in real time.
+Scripts use the file extension **.fsx** or **.fsscript**. Instead of compiling source code and then later running the compiled assembly, you can just run **dotnet fsi** and specify the filename of the script of F# source code, and F# interactive reads the code and executes it in real time.
 
+## Differences between the interactive, scripting, and compiled environments
 
-## Differences Between the Interactive, Scripting and Compiled Environments
 When you are compiling code in F# Interactive, whether you are running interactively or running a script, the symbol **INTERACTIVE** is defined. When you are compiling code in the compiler, the symbol **COMPILED** is defined. Thus, if code needs to be different in compiled and interactive modes, you can use preprocessor directives for conditional compilation to determine which to use.
 
 Some directives are available when you are executing scripts in F# Interactive that are not available when you are executing the compiler. The following table summarizes directives that are available when you are using F# Interactive.
@@ -74,14 +72,44 @@ printfn "%A" (MyAssembly.myFunction 10 40)
 
 The output is as follows:
 
-```
-Command line arguments: 
+```console
+Command line arguments:
 file1.fsx
 test
 90
 ```
 
-## Related Topics
+## Package Management in F# Interactive
+
+[!NOTE] Package management is available as a preview feature in versions of `dotnet fsi` shipped in the `3.1.300` and greater versions of the .NET SDK, as well as all `5.*` versions of the .NET SDK. To enable it in this preview release, run `dotnet fsi` with the `--langversion:preview` argument.
+
+The `#r` syntax for referencing a DLL in F# Interactive can also be used to reference a nuget package via the following syntax:
+
+```fsharp
+#r "nuget: <package name>
+```
+
+For example, to reference the `FSharp.Data` package, use the following `#r` reference:
+
+```fsharp
+#r "nuget: FSharp.Data"
+```
+
+After executing this line, the latest version of the `FSharp.Data` package will be downloaded to your nuget cache and referenced in the current F# Interactive session.
+
+In addition to the package name, specific versions of a package can be referenced via a short syntax:
+
+```fsharp
+#r "nuget: FSharp.Data, 3.3.2"
+```
+
+or in a more explicit fashion:
+
+```fsharp
+#r "nuget: FSharp.Data, Version=3.3.2"
+```
+
+## Related articles
 
 |Title|Description|
 |-----|-----------|

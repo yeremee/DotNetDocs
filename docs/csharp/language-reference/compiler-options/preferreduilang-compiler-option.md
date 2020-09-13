@@ -1,4 +1,5 @@
 ---
+description: "-preferreduilang (C# Compiler Options)"
 title: "-preferreduilang (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -31,6 +32,6 @@ csc.exe -preferreduilang:ja-JP
   
 ## Requirements  
   
-## See Also
+## See also
 
-- [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)
+- [C# Compiler Options](./index.md)

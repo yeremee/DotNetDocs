@@ -1,5 +1,6 @@
 ---
-title: "public keyword (C# Reference)"
+description: "public keyword - C# Reference"
+title: "public keyword - C# Reference"
 ms.date: 07/20/2015
 f1_keywords:
   - "public"
@@ -31,9 +32,9 @@ If you change the `public` access level to [private](private.md) or [protected](
 
 'PointTest.y' is inaccessible due to its protection level.
 
-## C# language specification
+## C# language specification  
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+For more information, see [Declared accessibility](~/_csharplang/spec/basic-concepts.md#declared-accessibility) in the [C# Language Specification](/dotnet/csharp/language-reference/language-specification/introduction). The language specification is the definitive source for C# syntax and usage.
 
 ## See also
 
@@ -43,7 +44,7 @@ If you change the `public` access level to [private](private.md) or [protected](
 - [C# Keywords](index.md)
 - [Access Modifiers](access-modifiers.md)
 - [Accessibility Levels](accessibility-levels.md)
-- [Modifiers](modifiers.md)
+- [Modifiers](index.md)
 - [private](private.md)
 - [protected](protected.md)
 - [internal](internal.md)

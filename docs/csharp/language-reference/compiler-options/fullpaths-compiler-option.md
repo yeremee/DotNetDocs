@@ -1,4 +1,5 @@
 ---
+description: "-fullpaths (C# Compiler Options)"
 title: "-fullpaths (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -25,6 +26,6 @@ The **-fullpaths** option causes the compiler to specify the full path to the fi
   
  This compiler option is unavailable in Visual Studio and cannot be changed programmatically.  
   
-## See Also  
+## See also
 
-- [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)
+- [C# Compiler Options](./index.md)

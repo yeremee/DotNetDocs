@@ -1,4 +1,5 @@
 ---
+description: "-help, -? (C# Compiler Options)"
 title: "-help, -? (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -28,7 +29,7 @@ This option sends a listing of compiler options, and a brief description of each
   
  This compiler option is unavailable in Visual Studio and cannot be changed programmatically.  
   
-## See Also  
+## See also
 
-- [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)  
+- [C# Compiler Options](./index.md)
 - [Managing Project and Solution Properties](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,5 +1,6 @@
 ---
-title: "out keyword (C# Reference)"
+description: "out keyword - C# Reference"
+title: "out keyword - C# Reference"
 ms.date: 03/01/2017
 f1_keywords: 
   - "out_CSharpKeyword"

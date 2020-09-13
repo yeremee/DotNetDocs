@@ -1,4 +1,5 @@
 ---
+description: "-noconfig (C# Compiler Options)"
 title: "-noconfig (C# Compiler Options)"
 ms.date: 07/20/2015
 f1_keywords: 
@@ -20,7 +21,7 @@ The **-noconfig** option tells the compiler not to compile with the csc.rsp file
 ```  
   
 ## Remarks  
- The csc.rsp file references all the assemblies shipped with the .NET Framework. The actual references that the Visual Studio .NET development environment includes depend on the project type.  
+ The csc.rsp file references all the assemblies shipped with .NET Framework. The actual references that the Visual Studio .NET development environment includes depend on the project type.  
   
  You can modify the csc.rsp file and specify additional compiler options that should be included in every compilation from the command line with csc.exe (except the **-noconfig** option).  
   
@@ -30,7 +31,7 @@ The **-noconfig** option tells the compiler not to compile with the csc.rsp file
   
  This compiler option is unavailable in Visual Studio and cannot be changed programmatically.  
   
-## See Also  
+## See also
 
-- [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md)  
+- [C# Compiler Options](./index.md)
 - [Managing Project and Solution Properties](/visualstudio/ide/managing-project-and-solution-properties)

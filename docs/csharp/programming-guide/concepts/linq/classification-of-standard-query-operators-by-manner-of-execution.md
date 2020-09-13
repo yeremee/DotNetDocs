@@ -1,5 +1,6 @@
 ---
 title: "Classification of Standard Query Operators by Manner of Execution (C#)"
+description: "Learn about the manners of execution of the standard query operator in C# for LINQ to Objects: immediate, deferred streaming, and deferred non-streaming."
 ms.date: 07/20/2015
 ms.assetid: b9435ce5-a7cf-4182-9f01-f3468a5533dc
 ---
@@ -26,7 +27,7 @@ The LINQ to Objects implementations of the standard query operator methods execu
  The following table classifies each standard query operator method according to its method of execution.  
   
 > [!NOTE]
->  If an operator is marked in two columns, two input sequences are involved in the operation, and each sequence is evaluated differently. In these cases, it is always the first sequence in the parameter list that is evaluated in a deferred, streaming manner.  
+> If an operator is marked in two columns, two input sequences are involved in the operation, and each sequence is evaluated differently. In these cases, it is always the first sequence in the parameter list that is evaluated in a deferred, streaming manner.  
   
 |Standard Query Operator|Return Type|Immediate Execution|Deferred Streaming Execution|Deferred Non-Streaming Execution|  
 |-----------------------------|-----------------|-------------------------|----------------------------------|---------------------------------------|  
@@ -81,9 +82,9 @@ The LINQ to Objects implementations of the standard query operator methods execu
 |<xref:System.Linq.Enumerable.Union%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
 |<xref:System.Linq.Enumerable.Where%2A>|<xref:System.Collections.Generic.IEnumerable%601>||X||  
   
-## See Also
+## See also
 
-- <xref:System.Linq.Enumerable>  
-- [Standard Query Operators Overview (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
-- [Query Expression Syntax for Standard Query Operators (C#)](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)  
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+- <xref:System.Linq.Enumerable>
+- [Standard Query Operators Overview (C#)](./standard-query-operators-overview.md)
+- [Query Expression Syntax for Standard Query Operators (C#)](./query-expression-syntax-for-standard-query-operators.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)

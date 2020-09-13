@@ -14,25 +14,23 @@ helpviewer_keywords:
   - "PutMethod function [.NET WMI and performance counters]"
 topic_type: 
   - "Reference"
-author: "rpetrusha"
-ms.author: "ronpet"
 ---
 # PutMethod function
 Creates a method.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
   
-```  
+```cpp  
 HRESULT PutMethod (
-   [in] int                vFunc, 
-   [in] IWbemClassObject*  ptr, 
+   [in] int                vFunc,
+   [in] IWbemClassObject*  ptr,
    [in] LPCWSTR            wszName,
    [in] LONG               lFlags,
    [in] IWbemClassObject*  pInSignature,
    [in] IWbemClassObject*  pOutSignature
-); 
+);
 ```  
 
 ## Parameters
@@ -44,7 +42,7 @@ HRESULT PutMethod (
 [in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
 
 `wszName`  
-[in] The name of the method to create. 
+[in] The name of the method to create.
 
 `lFlags`  
 [in] Reserved. This parameter must be 0.
@@ -54,7 +52,6 @@ HRESULT PutMethod (
 
 `pSignatureOut`  
 [in]  A pointer to a copy of the [__Parameters system class](/windows/desktop/WmiSdk/--parameters) that contains the `out` parameters for the method. This parameter is ignored if set to `null`.
- 
 
 ## Return value
 
@@ -74,11 +71,11 @@ The following values returned by this function are defined in the *WbemCli.h* he
 
 This function wraps a call to the [IWbemClassObject::PutMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-putmethod) method.
 
-This method call is only supported if `ptr` is a CIM class definition. Method manipulation is not available from [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) pointers that point to CIM instances.
+This method call is only supported if `ptr` is a CIM class definition. Method manipulation is not available from [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointers that point to CIM instances.
 
 Users cannot create methods with names that begin or end with an underscore. This is reserved for system classes and properties.
 
-For a method, the `in` and `out` parameters are described as properties in [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) objects.
+For a method, the `in` and `out` parameters are described as properties in [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) objects.
 
 An `[in/out]` parameter can be defined by adding the same property to both objects pointed to by the `pInSignature` and `pOutSignature` parameters. In this case, the properties share the same **ID** qualifier value.
 
@@ -89,11 +86,12 @@ Each property in a [__Parameters](/windows/desktop/WmiSdk/--parameters) class ob
 For an example, see the [IWbemClassObject::PutMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-putmethod) method.
 
 ## Requirements  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
   
  **Header:** WMINet_Utils.idl  
   
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## See also  
-[WMI and Performance Counters (Unmanaged API Reference)](index.md)
+## See also
+
+- [WMI and Performance Counters (Unmanaged API Reference)](index.md)

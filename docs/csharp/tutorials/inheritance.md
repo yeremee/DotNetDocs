@@ -1,9 +1,8 @@
 ---
 title: Inheritance in C#
 description: Learn to use inheritance in C# libraries and applications.
-author: rpetrusha
-ms.author: ronpet
 ms.date: 07/05/2018
+ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
 ---
 # Inheritance in C# and .NET
@@ -12,7 +11,7 @@ This tutorial introduces you to inheritance in C#. Inheritance is a feature of o
 
 ## Prerequisites
 
-This tutorial assumes that you've installed .NET Core. For installation instructions, see [.NET Core installation guide](https://www.microsoft.com/net/core). You also need a code editor. This tutorial uses [Visual Studio Code](https://code.visualstudio.com), although you can use any code editor of your choice.
+This tutorial assumes that you've installed the .NET Core SDK. Visit the [.NET Core Downloads](https://dotnet.microsoft.com/download) page to download it. You also need a code editor. This tutorial uses [Visual Studio Code](https://code.visualstudio.com), although you can use any code editor of your choice.
 
 ## Running the examples
 
@@ -23,7 +22,7 @@ To create and run the examples in this tutorial, you use the [dotnet](../../core
 1. Copy and paste the code from the example into your code editor.
 1. Enter the [dotnet restore](../../core/tools/dotnet-restore.md) command from the command line to load or restore the project's dependencies.
 
-  [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+   [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 1. Enter the [dotnet run](../../core/tools/dotnet-run.md) command to compile and execute the example.
 
@@ -53,9 +52,9 @@ While all other members of a base class are inherited by derived classes, whethe
 
 - [Public](../language-reference/keywords/public.md) members are visible in derived classes and are part of the derived class' public interface. Public inherited members can be called just as if they are defined in the derived class. In the following example, class `A` defines a method named `Method1`, and class `B` inherits from class `A`. The example then calls `Method1` as if it were an instance method on `B`.
 
-[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
+  [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
-Derived classes can also *override* inherited members by providing an alternate implementation. In order to be able to override a member, the member in the base class must be marked with the [virtual](../language-reference/keywords/virtual.md) keyword. By default, base class members are not marked as `virtual` and cannot be overridden. Attempting to override a non-virtual member, as the following example does, generates compiler error CS0506: "<member> cannot override inherited member <member> because it is not marked virtual, abstract, or override.
+Derived classes can also *override* inherited members by providing an alternate implementation. In order to be able to override a member, the member in the base class must be marked with the [virtual](../language-reference/keywords/virtual.md) keyword. By default, base class members are not marked as `virtual` and cannot be overridden. Attempting to override a non-virtual member, as the following example does, generates compiler error CS0506: "\<member> cannot override inherited member \<member> because it is not marked virtual, abstract, or override.
 
 ```csharp
 public class A
@@ -75,7 +74,7 @@ public class B : A
 }
 ```
 
-In some cases, a derived class *must* override the base class implementation. Base class members marked with the [abstract](../language-reference/keywords/abstract.md) keyword require that derived classes override them. Attempting to compile the following example generates compiler error CS0534, "<class> does not implement inherited abstract member <member>', because class `B` provides no implementation for `A.Method1`.
+In some cases, a derived class *must* override the base class implementation. Base class members marked with the [abstract](../language-reference/keywords/abstract.md) keyword require that derived classes override them. Attempting to compile the following example generates compiler error CS0534, "&lt;class&gt; does not implement inherited abstract member &lt;member&gt;", because class `B` provides no implementation for `A.Method1`.
 
 ```csharp
 public abstract class A
@@ -146,7 +145,7 @@ The following table lists the categories of types that you can create in C# and 
 Ordinarily, inheritance is used to express an "is a" relationship between a base class and one or more derived classes, where the derived classes are specialized versions of the base class; the derived class is a type of the base class. For example, the `Publication` class represents a publication of any kind, and the `Book` and `Magazine` classes represent specific types of publications.
 
 > [!NOTE]
-> A class or struct can implement one more interfaces. While interface implementation is often presented as a workaround for single inheritance or as a way of using inheritance with structs, it is intended to express a different relationship (a "can do" relationship) between an interface and its implementing type than inheritance. An interface defines a subset of functionality (such as the ability to test for equality, to compare or sort objects, or to support culture-sensitive parsing and formatting) that the interface makes available to its implementing types.
+> A class or struct can implement one or more interfaces. While interface implementation is often presented as a workaround for single inheritance or as a way of using inheritance with structs, it is intended to express a different relationship (a "can do" relationship) between an interface and its implementing type than inheritance. An interface defines a subset of functionality (such as the ability to test for equality, to compare or sort objects, or to support culture-sensitive parsing and formatting) that the interface makes available to its implementing types.
 
 Note that "is a" also expresses the relationship between a type and a specific instantiation of that type. In the following example, `Automobile` is a class that has three unique read-only properties: `Make`, the manufacturer of the automobile; `Model`, the kind of automobile; and `Year`, its year of manufacture. Your `Automobile` class also has a constructor whose arguments are assigned to the property values, and it overrides the <xref:System.Object.ToString%2A?displayProperty=nameWithType> method to produce a string that uniquely identifies the `Automobile` instance rather than the `Automobile` class.
 
@@ -176,7 +175,7 @@ In designing your `Publication` class, you need to make several design decisions
 
 - How far to extend your class hierarchy. Do you want to develop a hierarchy of three or more classes, rather than simply a base class and one or more derived classes? For example, `Publication` could be a base class of `Periodical`, which in turn is a base class of `Magazine`, `Journal` and `Newspaper`.
 
-  For your example, you'll use the small hierarchy of a `Publication` class and a single derived class, `Book`. You could easily extend the example to create a number of additional   classes that derive from `Publication`, such as `Magazine` and `Article`.
+  For your example, you'll use the small hierarchy of a `Publication` class and a single derived class, `Book`. You could easily extend the example to create a number of additional classes that derive from `Publication`, such as `Magazine` and `Article`.
 
 - Whether it makes sense to instantiate the base class. If it does not, you should apply the [abstract](../language-reference/keywords/abstract.md) keyword to the class. Otherwise, your `Publication` class can be instantiated by calling its class constructor. If an attempt is made to instantiate a class marked with the `abstract` keyword by a direct call to its class constructor, the C# compiler generates error CS0144, "Cannot create an instance of the abstract class or interface." If an attempt is made to instantiate the class by using reflection, the reflection method throws a <xref:System.MemberAccessException>.
 
@@ -186,9 +185,9 @@ In designing your `Publication` class, you need to make several design decisions
 
 - Whether derived classes must inherit the base class implementation of particular members, whether they have the option to override the base class implementation, or whether they must provide an implementation. You use the [abstract](../language-reference/keywords/abstract.md) keyword to force derived classes to provide an implementation. You use the [virtual](../language-reference/keywords/virtual.md) keyword to allow derived classes to override a base class method. By default, methods defined in the base class are *not* overridable.
 
- The `Publication` class does not have any `abstract` methods, but the class itself is `abstract`.
+  The `Publication` class does not have any `abstract` methods, but the class itself is `abstract`.
 
-- Whether a derived class represents the final class in the inheritance hierarchy and cannot itself be used as a base class for additional derived classes. By default, any class can serve as a base class. You can apply the [sealed](../language-reference/keywords/sealed.md) keyword to indicate that a class cannot serve as a base class for any additional classes. Attempting to derive from a sealed class generated compiler error CS0509, "cannot derive from sealed type <typeName>".
+- Whether a derived class represents the final class in the inheritance hierarchy and cannot itself be used as a base class for additional derived classes. By default, any class can serve as a base class. You can apply the [sealed](../language-reference/keywords/sealed.md) keyword to indicate that a class cannot serve as a base class for any additional classes. Attempting to derive from a sealed class generated compiler error CS0509, "cannot derive from sealed type \<typeName>".
 
   For your example, you'll mark your derived class as `sealed`.
 
@@ -243,7 +242,7 @@ In addition to the members that it inherits from `Publication`, the `Book` class
 
 - Two constructors
 
-  The two `Book` constructors share three common parameters. Two, *title* and *publisher*, correspond to parameters of the `Publication` constructor. The third is *author*, which is stored to a private `authorName` field. One constructor includes an *isbn* parameter, which is stored in the `ISBN` auto-property.
+  The two `Book` constructors share three common parameters. Two, *title* and *publisher*, correspond to parameters of the `Publication` constructor. The third is *author*, which is stored to a public immutable `Author` property. One constructor includes an *isbn* parameter, which is stored in the `ISBN` auto-property.
 
   The first constructor uses the [this](../language-reference/keywords/this.md) keyword to call the other constructor. Constructor chaining is a common pattern in defining constructors. Constructors with fewer parameters provide default values when calling the constructor with the greatest number of parameters.
 
@@ -251,11 +250,11 @@ In addition to the members that it inherits from `Publication`, the `Book` class
 
 - A read-only `ISBN` property, which returns the `Book` object's International Standard Book Number, a unique 10- or 13-digit number. The ISBN is supplied as an argument to one of the `Book` constructors. The ISBN is stored in a private backing field, which is auto-generated by the compiler.
 
-- A read-only `Author` property. The author name is supplied as an argument to both `Book` constructors and is stored in the private `authorName` field.
+- A read-only `Author` property. The author name is supplied as an argument to both `Book` constructors and is stored in the property.
 
-- Two read-only price-related properties, `Price` and `Currency`. Their values are provided as arguments in a `SetPrice` method call. The price is stored in a private field, `bookPrice`. The `Currency` property is the three-digit ISO currency symbol (for example, USD for the U.S. dollar) and is stored in the private `ISOCurrencySymbol` field. ISO currency symbols can be retrieved from the <xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A> property.
+- Two read-only price-related properties, `Price` and `Currency`. Their values are provided as arguments in a `SetPrice` method call. The `Currency` property is the three-digit ISO currency symbol (for example, USD for the U.S. dollar). ISO currency symbols can be retrieved from the <xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A> property. Both of these properties are externally read-only, but both can be set by code in the `Book` class.
 
-- A `SetPrice` method, which sets the values of the `bookPrice` and `ISOCurrencySymbol` fields. Those values are returned by the `Price` and `Currency` properties.
+- A `SetPrice` method, which sets the values of the `Price` and `Currency` properties. Those values are returned by those same properties.
 
 - Overrides to the `ToString` method (inherited from `Publication`) and the <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> and <xref:System.Object.GetHashCode%2A> methods (inherited from <xref:System.Object>).
 
@@ -286,11 +285,10 @@ You can then derive some classes from `Shape` that represent specific shapes. Th
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
 
-The following example uses objects derived from `Shape`. It instantiates an array of objects derived from `Shape` and calls the static methods of the `Shape` class, which wraps return `Shape` property values. The runtime retrieves values from the overridden properties of the derived types. The example also casts each `Shape` object in the array to its derived type and, if the cast succeeds, retrieves properties of that particular subclass of `Shape`. 
+The following example uses objects derived from `Shape`. It instantiates an array of objects derived from `Shape` and calls the static methods of the `Shape` class, which wraps return `Shape` property values. The runtime retrieves values from the overridden properties of the derived types. The example also casts each `Shape` object in the array to its derived type and, if the cast succeeds, retrieves properties of that particular subclass of `Shape`.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 
-## See Also
+## See also
 
-- [Classes and objects](../tour-of-csharp/classes-and-objects.md)   
 - [Inheritance (C# Programming Guide)](../programming-guide/classes-and-structs/inheritance.md)

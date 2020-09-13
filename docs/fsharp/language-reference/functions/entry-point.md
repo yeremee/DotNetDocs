@@ -1,5 +1,5 @@
 ---
-title: Entry Point (F#)
+title: Entry Point
 description: Learn how to set the entry point to an F# program that is compiled as an executable file, where execution formally starts.
 ms.date: 05/16/2016
 ---
@@ -24,7 +24,7 @@ The entry point function has type `string array -> int`. The arguments provided 
 
 The following example illustrates a simple `main` function.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/entry-point/snippet501.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/entry-point/snippet501.fs)]
 
 When this code is executed with the command line `EntryPoint.exe 1 2 3`, the output is as follows.
 

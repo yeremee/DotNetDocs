@@ -3,8 +3,6 @@ title: "Rules for Inferring Simple Types"
 ms.date: "03/30/2017"
 ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-author: "mairaw"
-ms.author: "mairaw"
 ---
 # Rules for Inferring Simple Types
 Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the data type for attributes and elements.  
@@ -59,8 +57,9 @@ Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the d
   
  When the first `attr2` value is encountered, the type of `attr2` is inferred as `unsignedByte` based on the value `0`. When the second `attr2` is encountered, the type is promoted to `string` based on the currently inferred type of `unsignedByte` and the current value `true` because the <xref:System.Xml.Schema.XmlSchemaInference> class does consider previous values when promoting the inferred type. However, if both instances of `attr2` were encountered in the same XML document and not in two different XML documents as illustrated above, `attr2` would have been inferred as `boolean`.  
   
-### Ignored Attributes from the http://www.w3.org/2001/XMLSchema-instance Namespace  
- The following are schema-defining attributes that are ignored during schema inference.  
+### Ignored attributes from the <https://www.w3.org/2001/XMLSchema-instance> namespace
+
+The following are schema-defining attributes that are ignored during schema inference.  
   
 |Attribute|Description|  
 |---------------|-----------------|  
@@ -71,6 +70,6 @@ Describes how the <xref:System.Xml.Schema.XmlSchemaInference> class infers the d
   
 ## See also
 
-- [XML Schema Object Model (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)  
-- [Inferring Schemas from XML Documents](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)  
-- [Rules for Inferring Schema Node Types and Structure](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+- [XML Schema Object Model (SOM)](xml-schema-object-model-som.md)
+- [Inferring Schemas from XML Documents](inferring-schemas-from-xml-documents.md)
+- [Rules for Inferring Schema Node Types and Structure](rules-for-inferring-schema-node-types-and-structure.md)

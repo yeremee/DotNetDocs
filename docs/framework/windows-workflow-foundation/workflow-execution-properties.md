@@ -13,9 +13,6 @@ Through thread local storage (TLS), the CLR maintains an execution context for e
 ## Creating and Using Workflow Execution Properties  
  Workflow execution properties usually implement the <xref:System.Activities.IExecutionProperty> interface, though properties focused on messaging may implement <xref:System.ServiceModel.Activities.ISendMessageCallback> and <xref:System.ServiceModel.Activities.IReceiveMessageCallback> instead. To create a workflow execution property, create a class that implements the <xref:System.Activities.IExecutionProperty> interface and implement the members <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> and <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A>. These members provide the execution property with an opportunity to properly set up and tear down the thread local storage during each pulse of work of the activity that contains the property, including any child activities. In this example, a `ConsoleColorProperty` is created that sets the `Console.ForegroundColor`.  
   
-> [!NOTE]
->  The following example code in this topic is based on the [Execution Properties](../../../docs/framework/windows-workflow-foundation/samples/execution-properties.md) sample.  
-  
 ```csharp  
 class ConsoleColorProperty : IExecutionProperty  
 {  
@@ -72,14 +69,14 @@ public sealed class ConsoleColorScope : NativeActivity
 ```csharp  
 Activity wf = new Parallel  
 {  
-    Branches =   
+    Branches =
     {  
         new ConsoleColorScope  
         {  
             Color = ConsoleColor.Blue,  
             Body = new Sequence  
             {  
-                Activities =   
+                Activities =
                 {  
                     new WriteLine  
                     {  
@@ -101,7 +98,7 @@ Activity wf = new Parallel
             Color = ConsoleColor.Red,  
             Body = new Sequence  
             {  
-                Activities =   
+                Activities =
                 {  
                     new WriteLine  
                     {  
@@ -120,7 +117,7 @@ Activity wf = new Parallel
         },  
         new Sequence  
         {  
-            Activities =   
+            Activities =
             {  
                 new WriteLine  
                 {  
@@ -144,7 +141,7 @@ WorkflowInvoker.Invoke(wf);
   
  When the workflow is invoked, the following output is written to the console window.  
   
-```  
+```console  
 Start blue text.  
 Start red text.  
 Start default text.  
@@ -154,11 +151,12 @@ End default text.
 ```  
   
 > [!NOTE]
->  Although it is not shown in the previous output, each line of text in the console window is displayed in the indicated color.  
+> Although it is not shown in the previous output, each line of text in the console window is displayed in the indicated color.  
   
  Workflow execution properties can be used by custom activity authors, and they also provide the mechanism for handle management for activities such as the <xref:System.ServiceModel.Activities.CorrelationScope> and <xref:System.Activities.Statements.TransactionScope> activities.  
   
-## See Also  
- <xref:System.Activities.IExecutionProperty>  
- <xref:System.Activities.IPropertyRegistrationCallback>  
- <xref:System.Activities.RegistrationContext>
+## See also
+
+- <xref:System.Activities.IExecutionProperty>
+- <xref:System.Activities.IPropertyRegistrationCallback>
+- <xref:System.Activities.RegistrationContext>

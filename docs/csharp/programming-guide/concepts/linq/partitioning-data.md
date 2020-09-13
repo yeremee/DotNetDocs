@@ -1,5 +1,6 @@
 ---
 title: "Partitioning Data (C#)"
+description: Learn how to partition data in LINQ. View an illustration showing the results of partitioning operations.
 ms.date: 07/20/2015
 ms.assetid: 2a5c507b-fe22-443c-a768-dec7f9ec568d
 ---
@@ -8,7 +9,7 @@ Partitioning in LINQ refers to the operation of dividing an input sequence into 
   
  The following illustration shows the results of three different partitioning operations on a sequence of characters. The first operation returns the first three elements in the sequence. The second operation skips the first three elements and returns the remaining elements. The third operation skips the first two elements in the sequence and returns the next three elements.  
   
- ![LINQ Partitioning Operations](../../../../csharp/programming-guide/concepts/linq/media/linq_partition.png "LINQ_Partition")  
+ ![Illustration that shows three LINQ partitioning operations.](./media/partitioning-data/linq-partitioning-operations.png)  
   
  The standard query operator methods that partition sequences are listed in the following section.  
   
@@ -21,7 +22,7 @@ Partitioning in LINQ refers to the operation of dividing an input sequence into 
 |Take|Takes elements up to a specified position in a sequence.|Not applicable.|<xref:System.Linq.Enumerable.Take%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=nameWithType>|  
 |TakeWhile|Takes elements based on a predicate function until an element does not satisfy the condition.|Not applicable.|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=nameWithType>|  
   
-## See Also
+## See also
 
-- <xref:System.Linq>  
-- [Standard Query Operators Overview (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- <xref:System.Linq>
+- [Standard Query Operators Overview (C#)](./standard-query-operators-overview.md)

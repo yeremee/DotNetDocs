@@ -1,10 +1,10 @@
 ---
 title: Write LINQ queries in C#
 description: Learn how to write LINQ queries in C#.
-ms.date: 12/1/2016
+ms.date: 12/01/2016
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
 ---
-# Write LINQ queries in C# #
+# Write LINQ queries in C\#
 
 This article shows the three ways in which you can write a LINQ query in C#:
 
@@ -37,7 +37,7 @@ Some query operations must be expressed as a method call. The most common such m
 
 [!code-csharp[csProgGuideLINQ#6](~/samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_2.cs)]
 
-If the method has Action or Func parameters, these are provided in the form of a [lambda](../programming-guide/statements-expressions-operators/lambda-expressions.md) expression, as shown in the following example:
+If the method has Action or Func parameters, these are provided in the form of a [lambda](../language-reference/operators/lambda-expressions.md) expression, as shown in the following example:
 
 [!code-csharp[csProgGuideLINQ#7](~/samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_3.cs)]
 

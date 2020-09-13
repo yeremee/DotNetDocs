@@ -1,5 +1,6 @@
 ---
 title: "Accessing Attributes by Using Reflection (C#)"
+description: Use reflection to get information defined with custom attributes in C# by using the GetCustomAttributes method.
 ms.date: 07/20/2015
 ms.assetid: dce3a696-4ceb-489a-b5e4-322a83052f18
 ---
@@ -107,12 +108,12 @@ class TestAuthorAttribute
 */  
 ```  
   
-## See Also
+## See also
 
-- <xref:System.Reflection>  
-- <xref:System.Attribute>  
-- [C# Programming Guide](../../../../csharp/programming-guide/index.md)  
-- [Retrieving Information Stored in Attributes](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
-- [Reflection (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
-- [Attributes (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
-- [Creating Custom Attributes (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- <xref:System.Reflection>
+- <xref:System.Attribute>
+- [C# Programming Guide](../../index.md)
+- [Retrieving Information Stored in Attributes](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
+- [Reflection (C#)](../reflection.md)
+- [Attributes (C#)](./index.md)
+- [Creating Custom Attributes (C#)](./creating-custom-attributes.md)

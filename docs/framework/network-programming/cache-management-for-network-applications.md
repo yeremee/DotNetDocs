@@ -6,9 +6,6 @@ helpviewer_keywords:
   - "network resources, caching"
   - "Internet, caching"
 ms.assetid: fc258a40-f370-434f-ae09-4a8cb11ddaeb
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
 ---
 # Cache Management for Network Applications
 This topic and its related subtopics describe caching for resources obtained using the <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest>, and <xref:System.Net.FtpWebRequest> classes.  
@@ -20,16 +17,16 @@ This topic and its related subtopics describe caching for resources obtained usi
  Due to security concerns, caching is **not** recommended for middle tier scenarios.  
   
 ## In This Section  
- [Cache Policy](../../../docs/framework/network-programming/cache-policy.md)  
+ [Cache Policy](cache-policy.md)  
  Explains what a cache policy is and how to define one.  
   
- [Location-Based Cache Policies](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [Location-Based Cache Policies](location-based-cache-policies.md)  
  Defines each type of location-based cache policy available for Hypertext Transfer Protocol (http and https) resources.  
   
- [Time-Based Cache Policies](../../../docs/framework/network-programming/time-based-cache-policies.md)  
+ [Time-Based Cache Policies](time-based-cache-policies.md)  
  Describes the criteria that can be used to customize a time-based cache policy.  
   
- [Configuring Caching in Network Applications](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
+ [Configuring Caching in Network Applications](configuring-caching-in-network-applications.md)  
  Describes how to programmatically create cache policies and requests that use caching.  
   
 ## Reference  

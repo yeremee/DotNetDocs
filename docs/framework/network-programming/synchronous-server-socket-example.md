@@ -1,5 +1,6 @@
 ---
 title: "Synchronous Server Socket Example"
+description: This example .NET Framework program creates a server that receives connections from clients using a synchronous socket. It receives and echoes a string.
 ms.date: "03/30/2017"
 dev_langs: 
   - "csharp"
@@ -9,9 +10,6 @@ helpviewer_keywords:
   - "sockets, code examples"
   - "sockets, synchronous server sockets"
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-author: "mcleblanc"
-ms.author: "markl"
-manager: "markl"
 ---
 # Synchronous Server Socket Example
 The following example program creates a server that receives connection requests from clients. The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client. The application receives a string from the client, displays the string on the console, and then echoes the string back to the client. The string from the client must contain the string "\<EOF>" to signal the end of the message.  
@@ -33,7 +31,7 @@ Public Class SynchronousSocketListener
         Dim bytes() As Byte = New [Byte](1024) {}  
   
         ' Establish the local endpoint for the socket.  
-        ' Dns.GetHostName returns the name of the   
+        ' Dns.GetHostName returns the name of the
         ' host running the application.  
         Dim ipHostInfo As IPHostEntry = Dns.GetHostEntry(Dns.GetHostName())  
         Dim ipAddress As IPAddress = ipHostInfo.AddressList(0)  
@@ -43,7 +41,7 @@ Public Class SynchronousSocketListener
         Dim listener As New Socket(ipAddress.AddressFamily, _  
             SocketType.Stream, ProtocolType.Tcp)  
   
-        ' Bind the socket to the local endpoint and   
+        ' Bind the socket to the local endpoint and
         ' listen for incoming connections.  
   
         listener.Bind(localEndPoint)  
@@ -93,7 +91,7 @@ public class SynchronousSocketListener {
         byte[] bytes = new Byte[1024];  
   
         // Establish the local endpoint for the socket.  
-        // Dns.GetHostName returns the name of the   
+        // Dns.GetHostName returns the name of the
         // host running the application.  
         IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());  
         IPAddress ipAddress = ipHostInfo.AddressList[0];  
@@ -103,7 +101,7 @@ public class SynchronousSocketListener {
         Socket listener = new Socket(ipAddress.AddressFamily,  
             SocketType.Stream, ProtocolType.Tcp );  
   
-        // Bind the socket to the local endpoint and   
+        // Bind the socket to the local endpoint and
         // listen for incoming connections.  
         try {  
             listener.Bind(localEndPoint);  
@@ -152,7 +150,8 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## See Also  
- [Synchronous Client Socket Example](../../../docs/framework/network-programming/synchronous-client-socket-example.md)  
- [Using a Synchronous Server Socket](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
- [Socket Code Examples](../../../docs/framework/network-programming/socket-code-examples.md)
+## See also
+
+- [Synchronous Client Socket Example](synchronous-client-socket-example.md)
+- [Using a Synchronous Server Socket](using-a-synchronous-server-socket.md)
+- [Socket Code Examples](socket-code-examples.md)

@@ -1,5 +1,6 @@
 ---
-title: "orderby clause (C# Reference)"
+description: "orderby clause - C# Reference"
+title: "orderby clause - C# Reference"
 ms.date: 07/20/2015
 f1_keywords: 
   - "orderby"
@@ -33,6 +34,6 @@ At compile time, the `orderby` clause is translated to a call to the <xref:Syste
 
 - [C# Reference](../index.md)
 - [Query Keywords (LINQ)](query-keywords.md)
-- [Language Integrated Query (LINQ)](../../linq/index.md)
+- [LINQ in C#](../../linq/index.md)
 - [group clause](group-clause.md)
-- [Getting Started with LINQ in C#](../../programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Language Integrated Query (LINQ)](../../programming-guide/concepts/linq/index.md)
